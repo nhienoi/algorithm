@@ -4,9 +4,9 @@ bool test(int n);
 
 bool test(int n) {
 	bool ok;
-	for (int i = n; i >= 4; i / 4) {
+	for (int i = n; i >= 4; i /= 4) {
 		if (i == 4) {
-			ok true;
+			ok = true;
 		} else {
 			ok = false;
 		}
