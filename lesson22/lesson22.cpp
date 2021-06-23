@@ -45,7 +45,7 @@ void again(int n, short type) {
 		again(n, type);
 	}
 }
- void check(se f[], int n) {
+ void check(se film[], int n) {
 	int count = 0;
 	for (int i = 0; i < n; i++) {
 		if (f[i].e <= f[i+1].s) {
