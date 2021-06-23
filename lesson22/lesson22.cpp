@@ -1,9 +1,28 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
+///////////////
+// PROTOTYPE //
+///////////////
+
 bool isTime(int n);
 void again(int n);
-//void check(se film[], int n);
+void check(se film[], int n);
+
+///////////////
+// STRUCTURE //
+///////////////
+
+struct se{
+	int s;
+	int e;
+};
+
+/////////////
+// PROCESS //
+/////////////
+
 bool isTime(int n) {
 	bool ok = true;
 	if (n > 24 || n < 0) {
@@ -11,10 +30,7 @@ bool isTime(int n) {
 	}
 	return ok;
 }
-struct se{
-	int s;
-	int e;
-};
+
 void again(int n, short type) {
 	cout << "value is not true, type again" << endl;
 	if (type == 0) {
@@ -29,7 +45,7 @@ void again(int n, short type) {
 		again(n, type);
 	}
 }
-/* void check(se f[], int n) {
+ void check(se f[], int n) {
 	int count = 0;
 	for (int i = 0; i < n; i++) {
 		if (f[i].e <= f[i+1].s) {
@@ -38,8 +54,11 @@ void again(int n, short type) {
 	}
 	cout << count;
 }
-*/
-int main() {
+//////////
+// MAIN //
+//////////
+
+int main(){
 	int n, s, e;
 	string t;
 	short type;
@@ -81,7 +100,7 @@ int main() {
 		cout << "\t";
 		cout << endl;
 	}
-//	check(film, n);
+	check(film, n);
 	return 0;
 }
 
