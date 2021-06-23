@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
-void type(int arr[], int n, int m);
-void exprt(int arr[], int n, int m);
-void type(int arr[], int n, int m) {
+void type(int arr[100][100], int n, int m);
+void exprt(int arr[100][100], int n, int m);
+
+void type(int arr[100][100], int n, int m) {
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
 			cout << "arr[" << n << "][" << m << "] = ";
@@ -10,7 +11,7 @@ void type(int arr[], int n, int m) {
 		}
 	}
 }
-void exprt(int arr[], int n, int m) {
+void exprt(int arr[100][100], int n, int m) {
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n;j++) {
 			cout << "arr[" << i << "][" << j << "] = " << arr[i][j];
@@ -23,7 +24,7 @@ int main() {
 	cout << "n m";
 	cin >> n >> m;
 	int arr[n][m];
-	type(arr[], n, m);
-	exprt(arr[], n, m);
+	type(arr, n, m);
+	exprt(arr, n, m);
 	return 0;
 }
