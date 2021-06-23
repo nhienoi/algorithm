@@ -8,7 +8,7 @@ using namespace std;
 
 bool isTime(int n);
 void again(int n);
-void check(se film[], int n);
+//void check(se film[], int n);
 
 ///////////////
 // STRUCTURE //
@@ -45,7 +45,7 @@ void again(int n, short type) {
 		again(n, type);
 	}
 }
- void check(se film[], int n) {
+/* void check(se film[], int n) {
 	int count = 0;
 	for (int i = 0; i < n; i++) {
 		if (film[i].e <= film[i+1].s) {
@@ -53,7 +53,7 @@ void again(int n, short type) {
 		}
 	}
 	cout << count;
-}
+} */
 //////////
 // MAIN //
 //////////
@@ -92,15 +92,16 @@ int main(){
 		} else {
 			t = "am";
 		}
-
-		cout << "bo phim thu " << i + 1 << ": ";
+		cout << "|||||||||||||||||||||||";
+		cout << "bo phim thu " << i + 1 << endl;
 		cout << "start: " << film[i].s << t;
 		cout << "\t";
 		cout << "end: " <<  film[i].e << t;
 		cout << "\t";
 		cout << endl;
+		cout << endl;
 	}
-	check(film, n);
+	// check(film, n);
 	return 0;
 }
 
