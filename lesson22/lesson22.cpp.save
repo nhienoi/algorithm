@@ -1,0 +1,80 @@
+#include <iostream>
+#include <string>
+using namespace std;
+bool isTime(int n);
+void again(int n);
+//void check(se film[], int n);
+bool isTime(int n) {
+	bool ok = true;
+	if (n > 24 || n < 0) {
+		ok = false;
+	}
+	return ok;
+}
+struct se{
+	int s;
+	int e;
+};
+void again(int n) {
+	cin >> n;
+	isTime(n);
+	if (!isTime(n)) {
+		again(n);
+	}
+}
+/* void check(se f[], int n) {
+	int count = 0;
+	for (int i = 0; i < n; i++) {
+		if (f[i].e <= f[i+1].s) {
+			count++;
+		}
+	}
+	cout << count;
+}
+*/
+int main() {
+	int n, s, e;
+	string t;
+	cout << "nhap so bo phim: ";
+	cin >> n;
+	se film[n];
+	for (int i = 0; i < n; i++) {
+		bool ok;
+		cout << "start: ";
+		cin >> film[i].s;
+		if (!isTime(film[i].s)) 
+			cout << "start: ";
+			again(film[i].s);
+		}
+		cout << "end: ";
+		cin >> film[i].e;
+		if (!isTime(film[i].e)) {
+			cout << "value is not true, type again: ";
+			cout << "end: ";
+			again(film[i].e);
+		}
+	}
+	for (int i = 0; i < n; i++) {
+		if(film[i].s >= 13 || film[i].e >= 13) {
+			if (film[i].s >= 13) {			
+				film[i].s = film[i].s - 12;
+			}
+			if (film[i].e >= 13) {
+				film[i].e = film[i].e - 12;
+			}
+			t = "pm";
+		} else {
+			t = "am";
+		}
+
+		cout << "bo phim thu " << i + 1 << ": ";
+		cout << "start: " << film[i].s << t;
+		cout << "\t";
+		cout << "end: " <<  film[i].e << t;
+		cout << "\t";
+		cout << endl;
+	}
+//	check(film, n);
+	return 0;
+}
+

@@ -1,0 +1,50 @@
+#include <iostream>
+#include <string>
+using namespace std;
+//void check(se film[], int n);
+struct se{
+	int s;
+	int e;
+};
+
+/* void check(se f[], int n) {
+	int count = 0;
+	for (int i = 0; i < n; i++) {
+		if (f[i].e <= f[i+1].s) {
+			count++;
+		}
+	}
+	cout << count;
+}
+*/
+int main() {
+	int n, s, e;
+	string t;
+	cout << "nhap so bo phim: ";
+	cin >> n;
+	se film[n];
+	for (int i = 0; i < n; i++) {
+		cout << "start: ";
+		cin >> film[i].s;
+		cout << "end: ";
+		cin >> film[i].e;
+	}
+	for (int i = 0; i < n; i++) {
+		if(film[i].s >= 13 || film[i].e >= 13) {
+			? film[i].s >= 13
+			t = "pm";
+		} else {
+			t = "am";
+		}
+
+		cout << "bo phim thu " << i + 1 << ": ";
+		cout << "start: " << film[i].s << t;
+		cout << "\t";
+		cout << "end: " <<  film[i].e << t;
+		cout << "\t";
+		cout << endl;
+	}
+//	check(film, n);
+	return 0;
+}
+
